@@ -224,10 +224,9 @@ document.getElementById("check").addEventListener("click", function(){
 });
 
 document.getElementById("getpeerid").addEventListener("click", function () {
-        swal.fire({
-            title: '提示',
-            text:  window.location.protocol + "//" + window.location.host + location.pathname + "?id=" +myid+ "<br>" + "<img src='https://chart.googleapis.com/chart?cht=qr&chl=" + window.location.protocol + "//" + window.location.host + location.pathname + "?id=" +myid + "&chs=200x200>",
-            showCancelButton: false
-        }).then(function(result) {
-        })
-    })
+    var urlpeer = window.location.protocol + "//" + window.location.host + location.pathname + "?id=" +myid
+    swal.fire(
+        "提示",
+        urlpeer + "<br>" + "<img src='https://chart.googleapis.com/chart?cht=qr&chl=" + urlpeer + "&chs=200x200'>",
+    );
+})
